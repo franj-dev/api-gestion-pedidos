@@ -45,7 +45,7 @@ Para levantar el entorno rápido con Docker, sigue estos pasos desde la terminal
 
 1. **Clonar el repositorio y entrar en la carpeta:**
    ```bash
-   git clone <URL_DE_TU_REPOSITORIO>
+   git clone https://github.com/franj-dev/api-gestion-pedidos.git
    cd api-gestion-pedidos
    ```
 
