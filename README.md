@@ -30,10 +30,6 @@ Para dejar el flujo lo más limpio y automatizado posible, he combinado ambas es
 - **API Resources (`OrderResource`):** Estructura las respuestas JSON quitando datos innecesarios y formateando la información de manera limpia.
 - **Transacciones de Base de Datos:** Todo el proceso de crear el pedido y descontar el stock está protegido con `DB::transaction()`. Si nos quedamos sin existencias en mitad del proceso, se lanza una excepción, se hace un **Rollback automático** y la base de datos se queda impecable (sin pedidos fantasma).
 - **Query Scopes:** He añadido el scope local `pending()` en el modelo `Order` para poder filtrar las órdenes pendientes de forma mucho más limpia en el código.
-
-
-- **Transacciones de Base de Datos:** Todo el proceso de crear el pedido y descontar el stock está protegido con `DB::transaction()`. Si nos quedamos sin existencias en mitad del proceso, se lanza una excepción, se hace un **Rollback automático** y la base de datos se queda impecable (sin pedidos fantasma).
-- **Query Scopes:** He añadido el scope local `pending()` en el modelo `Order` para poder filtrar las órdenes pendientes de forma mucho más limpia en el código.
 - **Tests Automatizados:** Implementación de *Feature Tests* para validar el flujo completo de creación de pedidos, asegurando que la respuesta HTTP y la integridad del stock sean correctas tras cada cambio.
 - **Optimización (Caché):** Arquitectura preparada para el uso de `Cache::remember` en el listado de productos, con una estrategia de invalidación mediante `ProductObserver` para garantizar que los datos siempre estén actualizados.
 
